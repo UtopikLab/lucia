@@ -4,14 +4,14 @@
 
 ## Scope
 
-Design and build an integrated Linux desktop environment for general desktop users, initially targeting modern desktops and laptops and Ubuntu LTS. Prioritize simplicity, performance, and consistency. The intended scope includes the shell, compositor/window management, panel/launcher/notifications, settings, and core apps, with most components built in-house. Applications launch as `containerd`-managed instances, with native-feeling integration, permission-mediated host access, and strong isolation by default. These are product directions; detailed architecture and implementation remain open.
+Design and build an integrated Linux desktop distribution for general desktop users, initially targeting modern desktops and laptops. LUCIA's own integrated desktop distribution will provisionally be based on Ubuntu. The specific Ubuntu release and whether it is LTS or non-LTS remain undecided, as do supported configurations, platform interfaces, kernel, and compatibility details. Prioritize simplicity, performance, and consistency. The intended scope includes the shell, compositor/window management, panel/launcher/notifications, settings, and core apps, with most components built in-house. Applications launch as `containerd`-managed instances, with native-feeling integration, permission-mediated host access, and strong isolation by default. These are product directions; detailed architecture and implementation remain open.
 
 Potential areas of investigation include the desktop shell and workflow, window management and display protocol, settings and system integration, application compatibility, accessibility, security, performance, hardware support, and maintenance. These are prompts for exploration, not a prescribed architecture.
 
 ## Background and confidence
 
 - 🟢 **Broad orientation:** A complete desktop experience involves more than window placement; the visible shell and its integration with applications and system services affect the overall user experience.
-- 🟡 **To verify for a chosen target:** Display protocols, compositor capabilities, toolkit support, portal behavior, packaging, and distribution integration vary by software and version. No specific compatibility claim has been confirmed for this session.
+- 🟡 **To verify for LUCIA's target distribution/platform:** Display protocols, compositor capabilities, toolkit support, portal behavior, packaging, and distribution integration vary by software and version. No specific compatibility claim has been confirmed for this session.
 
 ## First thinktank topic: one app's lifecycle
 
@@ -106,16 +106,14 @@ Keep using LUCIA as the working codename while refining the open package/manager
 > *Resume:* Use mainstream personal computing as the baseline. This does not rule out accessibility needs or future specialized workflows; detailed personas and priorities remain open.
 - ✅ **RESOLVED — Hardware baseline:** modern desktop and laptop systems, with GPU and graphics support important to the design.
 > *Resume:* This establishes a general hardware class, not a minimum specification. GPU vendors, performance targets, memory floor, display requirements, and peripheral support remain unspecified.
-- ✅ **RESOLVED — Distribution family:** Debian/Ubuntu family.
-> *Resume:* Use the Debian/Ubuntu ecosystem as the initial target. The specific distribution(s), release(s), and packaging approach are not selected yet.
-- ✅ **RESOLVED — First supported distribution:** Ubuntu LTS.
-> *Resume:* Begin with Ubuntu LTS as the initial supported distribution. Select the specific LTS release when implementation timing and compatibility requirements are clearer; Debian stable is not part of the initial target unless revisited.
+- ✅ **RESOLVED — Provisional target distribution:** LUCIA's own integrated desktop distribution will provisionally be based on Ubuntu.
+> *Resume:* Ubuntu is the provisional base, not a final baseline selection. The specific Ubuntu release, LTS versus non-LTS status, supported configurations, platform interfaces, kernel, and compatibility details remain open. The current host is only one environment and does not establish final compatibility.
 - ✅ **RESOLVED — Leading product priorities:** simplicity, performance, and consistency.
 > *Resume:* Use these three qualities to guide tradeoffs and evaluate the experience. Other qualities, including accessibility, privacy, stability, and configurability, remain relevant but were not selected as the top priorities.
 - ✅ **RESOLVED — Product scope:** an integrated desktop environment covering shell/workspaces, compositor/window management, panel/launcher/notifications, settings, and core desktop apps; build most components in-house.
 > *Resume:* The intended product is broad rather than a shell-only customization. "Most in-house" leaves room to reuse established Linux components when that is the better engineering choice; specific boundaries are not yet selected.
 - ✅ **RESOLVED — Evaluation evidence:** compatibility testing, performance benchmarks, security review, and maintenance/ecosystem health.
-> *Resume:* Use these evidence sources to evaluate design and implementation options. User research and accessibility testing were not selected as primary methods in this answer, but remain relevant considerations rather than exclusions.
+> *Resume:* Use these evidence sources to evaluate design and implementation options for LUCIA's target distribution/platform. User research and accessibility testing were not selected as primary methods in this answer, but remain relevant considerations rather than exclusions.
 - ✅ **RESOLVED — Application process model:** `containerd` manages application processes; launching an app creates a container instance.
 > *Resume:* Treat app-per-container launch behavior as a product requirement. The shell/compositor placement, container image and packaging format, instance reuse and shutdown behavior, and desktop-service integration remain open.
 - ✅ **RESOLVED — App runtime ownership:** the app is managed as a container.
