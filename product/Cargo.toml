@@ -1,0 +1,3 @@
+[workspace]
+members = ["crates/lucia-engine", "crates/lucia-local-model"]
+resolver = "3"
